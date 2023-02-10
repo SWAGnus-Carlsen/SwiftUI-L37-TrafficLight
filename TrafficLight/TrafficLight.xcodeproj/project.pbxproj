@@ -11,7 +11,7 @@
 		12BD1F3229964BB800D4DA86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD1F3129964BB800D4DA86 /* ContentView.swift */; };
 		12BD1F3429964BBB00D4DA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12BD1F3329964BBB00D4DA86 /* Assets.xcassets */; };
 		12BD1F3729964BBB00D4DA86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12BD1F3629964BBB00D4DA86 /* Preview Assets.xcassets */; };
-		12BD1F3E29965EC000D4DA86 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD1F3D29965EC000D4DA86 /* SwiftUIView.swift */; };
+		12BD1F3E29965EC000D4DA86 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD1F3D29965EC000D4DA86 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		12BD1F3129964BB800D4DA86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		12BD1F3329964BBB00D4DA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12BD1F3629964BBB00D4DA86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		12BD1F3D29965EC000D4DA86 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		12BD1F3D29965EC000D4DA86 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 				12BD1F3129964BB800D4DA86 /* ContentView.swift */,
 				12BD1F3329964BBB00D4DA86 /* Assets.xcassets */,
 				12BD1F3529964BBB00D4DA86 /* Preview Content */,
-				12BD1F3D29965EC000D4DA86 /* SwiftUIView.swift */,
+				12BD1F3D29965EC000D4DA86 /* CustomButtonStyle.swift */,
 			);
 			path = TrafficLight;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			files = (
 				12BD1F3229964BB800D4DA86 /* ContentView.swift in Sources */,
 				12BD1F3029964BB800D4DA86 /* TrafficLightApp.swift in Sources */,
-				12BD1F3E29965EC000D4DA86 /* SwiftUIView.swift in Sources */,
+				12BD1F3E29965EC000D4DA86 /* CustomButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

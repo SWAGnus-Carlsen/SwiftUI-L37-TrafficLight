@@ -18,8 +18,13 @@ struct ContentView: View {
     @State var color1: CGColor?
     @State var color2: CGColor?
     @State var color3: CGColor?
+    @State var currentDate = Date.now
+    @State var timer = Timer(timeInterval: 1,  repeats: false){_ in }
+    @State var isLaunched: Bool = false
+    @State var canStartTimer: Bool = true
     @State var wasTappedAtLeastOnce = false
-    @State var state = TrafficLightState.yellowLight
+    @State var labelText = "START"
+    @State var state = TrafficLightState.redLight
     var defaultColor = UIColor.systemGray.cgColor
     var body: some View {
         ZStack{
@@ -37,9 +42,20 @@ struct ContentView: View {
                     .overlay(Circle().stroke(Color .white, lineWidth:10))
                     .clipShape(Circle())
                 Spacer()
-                Button(action: { changeState()}) {
+                Button(action:
+                        { if labelText == "START"{
+                            canStartTimer = true
+                            changeState()}
+                    else {
+                        labelText = "START"
+                        isLaunched.toggle()
+                        canStartTimer = false
+                        timer.invalidate()
+                        
+                    }
+                }) {
                            HStack {
-                               Text(wasTappedAtLeastOnce ? "NEXT STATE" : "START")
+                               Text(labelText)
                                    .font(.custom("Seravek-Bold", size: 25))
                                    .fontWeight(.bold)
                                    .foregroundColor(Color.white)
@@ -57,35 +73,39 @@ struct ContentView: View {
         
     }
     func changeState() {
-        wasTappedAtLeastOnce = true
-        switch state {
-            
-        case .redLight:
-            state = .redAndYellowLight
-        case .redAndYellowLight:
-            state = .greenLight
-        case .greenLight:
-            state = .yellowLight
-        case .yellowLight:
-            state = .redLight
-        }
+        
+ 
         switch state {
         case .redLight:
             color1 = UIColor.red.cgColor
             color2 = UIColor.systemGray.cgColor
             color3 = UIColor.systemGray.cgColor
+            state = .redAndYellowLight
         case .redAndYellowLight:
             color1 = UIColor.red.cgColor
             color2 = UIColor.systemYellow.cgColor
             color3 = UIColor.systemGray.cgColor
+            state = .greenLight
         case .greenLight:
             color1 = UIColor.systemGray.cgColor
             color2 = UIColor.systemGray.cgColor
             color3 = UIColor.systemGreen.cgColor
+            state = .yellowLight
         case .yellowLight:
             color1 = UIColor.systemGray.cgColor
             color2 = UIColor.systemYellow.cgColor
             color3 = UIColor.systemGray.cgColor
+            state = .redLight
+        }
+        if !isLaunched, canStartTimer{
+            isLaunched.toggle()
+            labelText = "STOP"
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { time in
+                changeState() }
+            
+            
+            
         }
     }
 }
