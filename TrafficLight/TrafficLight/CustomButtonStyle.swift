@@ -11,21 +11,22 @@ struct CustomButtonStyle: ButtonStyle {
         func makeBody(configuration: Self.Configuration) -> some View {
                 configuration.label
                     .hidden()
+                    .frame(width: 200, height: 50)
                     .padding(EdgeInsets(top: 12, leading: 15, bottom: 12, trailing: 15))
                     .cornerRadius(50)
                     .overlay(
                         RoundedRectangle(cornerRadius: 50)
-                            .stroke(Color.black, lineWidth: 1)
+                            .stroke(Color.white, lineWidth: 10)
                     )
                     .overlay(
                         RoundedRectangle(cornerRadius: 50)
-                            .fill(Color.red)
+                            .fill(Color.blue)
                             .shadow(color: Color.black.opacity(1), radius: 1)
                     )
-                    .opacity(0.7)
+                    //.opacity(0.7)
                     .overlay(configuration.label)
-                    .padding(.bottom, 100)
-                    .padding(.bottom, 20)
+//                    .padding(.bottom, 100)
+//                    .padding(.bottom, 20)
     }
 }
 
